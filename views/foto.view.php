@@ -11,15 +11,21 @@
 <body>
     <header>
         <div class="contenedor">
-            <h1 class="titulo">Foto: 1.jpeg</h1>
+            <h1 class="titulo">Foto:<?php if(!empty($foto['titulo'])) //Si tiene titulo lo mostramos.
+                echo $foto['titulo'];
+                else 
+                {
+                    echo $foto['imagen'];   //Sino mostramos el nombre del archivo.
+                }
+            ?></h1>
         </div>
     </header>
 
     <div class="contenedor">
 
         <div class="foto">
-            <img src="imagenes/1.jpeg" alt="">
-            <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <img src="fotos/<?php echo $foto['imagen']; //Traemos la foto correspondiente segun su ruta.?>" alt="">
+            <p class="<?php echo $foto['texto']; //Traemos el texto?>"></p>
             <a href="index.php" class="regresar"><i class="fa fa-long-arrow-left"></i> Regresar</a>
         </div>
 
